@@ -2,11 +2,12 @@
 	// import Header from '$lib/header/Header.svelte';
 	// import {onMount} from 'svelte';
 	// import { theme } from '../stores/theme.store';
+	import Sidebar from '$lib/Sidebar/Sidebar.svelte'
 	import '../app.css';
 </script>
 
 <!-- <Header /> -->
-
+<Sidebar />
 <main class="dark:dark light">
 	<slot />
 </main>
@@ -23,17 +24,6 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
 	.dark {
 		background: var(--dark-background);
 	}
