@@ -19,5 +19,6 @@
         width: max-content;
         padding: 2rem;
         border-radius: 8px;
+        margin: 1rem;
     }
 </style>

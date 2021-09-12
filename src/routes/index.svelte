@@ -4,7 +4,7 @@
 	import TinyCard from '$lib/Card/TinyCard.svelte';
 	import Card from '$lib/Card/Card.svelte';
 	let portfolio;
-
+	let profitgraph;
 	onMount(() => {
 		// Chart.legend.labels.usePointStyle = true;
 		const data = {
@@ -42,7 +42,36 @@
 			}
 		};
 		const ctx = portfolio.getContext('2d');
+		const profitCtx = profitgraph.getContext('2d');
+		const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July'];
+		const profitData = {
+			labels: labels,
+			datasets: [
+				{
+					label: 'My First Dataset',
+					data: [65, 59, 80, 81, 56, 55, 40],
+					// fill: false,
+					borderColor: '#7000e1',
+					tension: 0.9
+				}
+			]
+		};
+		const profitConfig = {
+			type: 'line',
+			data: profitData,
+			options: {
+				responsive: true,
+				scales: {
+					x: {
+						grid: {
+							display: false
+						}
+					}
+				}
+			}
+		};
 		var myChart = new Chart(ctx, config);
+		var profitChart = new Chart(profitCtx, profitConfig);
 	});
 </script>
 
@@ -158,14 +187,26 @@
 </div>
 <h1>This is a heading</h1>
 <p>This is text</p>
-<Card>
-	<span slot="card-header">
-		<h2>Money Portfolio</h2>
-	</span>
-	<span slot="card-body">
-		<canvas bind:this={portfolio} width={300} height={300} />
-	</span>
-</Card>
+<div class="row">
+	<Card>
+		<span slot="card-header">
+			<div class="row">
+				<h2>Total profit (KSH)</h2>
+			</div>
+		</span>
+		<span slot="card-body">
+			<canvas bind:this={profitgraph} width={300} height={300} />
+		</span>
+	</Card>
+	<Card>
+		<span slot="card-header">
+			<h2>Money Portfolio</h2>
+		</span>
+		<span slot="card-body">
+			<canvas bind:this={portfolio} width={300} height={300} />
+		</span>
+	</Card>
+</div>
 
 <style>
 	.row {
