@@ -4,27 +4,70 @@
 	--orange-color: #fc8800;
 	--dark-background-color: #26182f;
 	--light-background-color: #f5f3f6;
+	--dark-font-color: #786c83;
+	--dark-heading-color: #fff;
+	--light-heading-color: #26182f;
+	--dark-card-background: #372841;
+	--light-card-background: #ffffff;
 	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
+	--light-font-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	font-family: 'Poppins',sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
-	background: var(--light-background-color);
-	color: var(--text-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+body.light {
+	background: var(--light-background-color);
+	color: var(--light-font-color);
+}
+
+body.dark {
+	background: var(--dark-background-color);
+	color: var(--dark-font-color);
+}
+
+.dark ~ h1 {
+	color: var(--dark-heading-color);
+}
+
+.light ~ h1 {
+	color: var(--light-heading-color);
+}
+
+.dark .card-container,
+.dark .sidebar-container,
+.dark .search input {
+	background: var(--dark-card-background);
+	background-color: var(--dark-card-background);
+}
+
+.light .card-container,
+.light .sidebar-container,
+.light .search input {
+	background-color: var(--light-card-background);
+	background: var(--light-card-background);
+	color: var(--light-font-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 600;
 }
 
@@ -32,7 +75,7 @@ h1,
 h2,
 p {
 	font-weight: 400;
-	color: var(--heading-color);
+	/* color: var(--dark-heading-color); */
 }
 
 p {

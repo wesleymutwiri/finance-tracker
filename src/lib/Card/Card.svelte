@@ -15,7 +15,7 @@
 
 <style>
     .card-container {
-        background: #fff;
+        /* background: #fff; */
         width: max-content;
         padding: 2rem;
         border-radius: 8px;

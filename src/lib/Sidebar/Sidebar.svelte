@@ -125,9 +125,9 @@
 	.sidebar-container {
 		display: flex;
 		flex-direction: column;
-		position: fixed;
+		position: sticky;
 		padding: 2rem;
-		background: #ffffff;
+		/* background: #ffffff; */
 		height: 100vh;
 		width: 300px;
 		align-items: center;
