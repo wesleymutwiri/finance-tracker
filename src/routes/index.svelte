@@ -3,6 +3,8 @@
 	import Chart from 'chart.js/auto';
 	import TinyCard from '$lib/Card/TinyCard.svelte';
 	import Card from '$lib/Card/Card.svelte';
+	import TransactionItem from '$lib/Transactions/TransactionItem.svelte';
+
 	let portfolio;
 	let profitgraph;
 	onMount(() => {
@@ -15,7 +17,7 @@
 					data: [300, 50, 100],
 					backgroundColor: ['#7000e1', '#fc8800', '#00b0e8'],
 					// hoverOffset: 4,
-					borderWidth: 0,
+					borderWidth: 0
 				}
 			]
 		};
@@ -25,15 +27,19 @@
 			options: {
 				borderRadius: '30',
 				responsive: true,
-				cutout: '90%',
+				cutout: '95%',
 				spacing: 2,
 				plugins: {
 					legend: {
-						position: 'top',
+						position: 'bottom',
 						display: true,
 						labels: {
-							usePointStyle: true
-						}
+							usePointStyle: true,
+							padding: 20,
+							font: {
+								size: 14
+							}
+						},
 					},
 					title: {
 						display: true,
@@ -51,10 +57,11 @@
 				{
 					label: 'My First Dataset',
 					data: [65, 59, 80, 81, 56, 55, 40],
-					// fill: false,
+					fill: true,
 					borderColor: '#7000e1',
 					tension: 0.5,
 					pointRadius: 0,
+					backgroundColor: '#7000e120'
 				}
 			]
 		};
@@ -154,7 +161,9 @@
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				class="css-i6dzq1"><polyline points="6 9 12 15 18 9" /></svg
+				class="css-i6dzq1"
+			>
+				<polyline points="6 9 12 15 18 9" /></svg
 			>
 		</div>
 	</div>
@@ -195,7 +204,7 @@
 	<Card>
 		<span slot="card-header">
 			<div class="row">
-				<h2>Total profit (KSH)</h2>
+				<h3>Total profit (KSH)</h3>
 			</div>
 		</span>
 		<span slot="card-body">
@@ -204,10 +213,31 @@
 	</Card>
 	<Card>
 		<span slot="card-header">
-			<h2>Money Portfolio</h2>
+			<h3>Money Portfolio</h3>
 		</span>
 		<span slot="card-body">
 			<canvas bind:this={portfolio} width={400} height={400} />
+		</span>
+	</Card>
+</div>
+
+<div class="row">
+	<Card>
+		<span slot="card-header">
+			<h3>Latest transactions</h3>
+		</span>
+		<span slot="card-body">
+			<TransactionItem
+				title="Payment to insurance company"
+				price="-337.99"
+				date="29 Jun at 10:12"
+			/>
+			<TransactionItem title="Profit from trading crypto" price="1024.45" date="27 Jun at 18:34" />
+			<TransactionItem
+				title="Profit from Selling of stocks"
+				price="13000.45"
+				date="25 Jun at 09:34"
+			/>
 		</span>
 	</Card>
 </div>
@@ -238,6 +268,11 @@
 	/* .search:not(input:placeholder-shown) ~ svg {
 		display: none;
 	} */
+
+	.avatar {
+		margin: 0 1rem 0 3rem;
+	}
+
 	.avatar img {
 		border-radius: 50%;
 		width: 50px;
