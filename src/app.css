@@ -27,6 +27,7 @@ body {
 	margin: 0;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
+	transition: background 1s linear;
 }
 
 body.light {
@@ -39,11 +40,13 @@ body.dark {
 	color: var(--dark-font-color);
 }
 
-.dark ~ h1 {
+.dark h1,
+.dark h2 {
 	color: var(--dark-heading-color);
 }
 
-.light ~ h1 {
+.light h1,
+.light h2 {
 	color: var(--light-heading-color);
 }
 
@@ -87,8 +90,13 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
+.dark a:hover {
+	/* text-decoration: underline; */
+	color: var(--dark-heading-color);
+}
+
+.light a:hover {
+	color: var(--light-heading-color);
 }
 
 h1 {
@@ -125,6 +133,14 @@ button:focus:not(:focus-visible) {
 	h1 {
 		font-size: 2.4rem;
 	}
+}
+
+.light ::placeholder {
+	color: var(--light-font-color);
+}
+
+.dark ::placeholder {
+	color: var(--dark-font-color);
 }
 
 /* @media (prefers-color-scheme: dark) {
