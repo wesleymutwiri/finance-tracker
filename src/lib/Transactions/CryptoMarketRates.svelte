@@ -24,7 +24,10 @@
 {#if accountData}
 	{#each accountData as data, i}
 		<p>
-			{data.id}: {data.current_price}
+			<span class="market-name">
+				{data.id}: 
+			</span>
+			${data.current_price}
 		</p>
 	{/each}
 {/if}
@@ -32,7 +35,13 @@
 
 <style>
     .market-rates {
-        height: 300px;
+        height: 170px;
         overflow-y: scroll;
     }
+
+	.market-name {
+		font-weight: 600;
+		text-transform: capitalize;
+		font-size: 1.2rem;
+	}
 </style>
