@@ -4,6 +4,7 @@
 	import TinyCard from '$lib/Card/TinyCard.svelte';
 	import Card from '$lib/Card/Card.svelte';
 	import TransactionItem from '$lib/Transactions/TransactionItem.svelte';
+	import CryptoMarketRates from '$lib/Transactions/CryptoMarketRates.svelte';
 
 	let portfolio;
 	let profitgraph;
@@ -39,7 +40,7 @@
 							font: {
 								size: 14
 							}
-						},
+						}
 					},
 					title: {
 						display: true,
@@ -238,6 +239,14 @@
 				price="13000.45"
 				date="25 Jun at 09:34"
 			/>
+		</span>
+	</Card>
+	<Card>
+		<span slot="card-header">
+			<h3>Current Market Rates</h3>
+		</span>
+		<span slot="card-body">
+			<CryptoMarketRates />
 		</span>
 	</Card>
 </div>
