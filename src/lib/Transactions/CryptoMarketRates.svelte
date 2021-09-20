@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-
-	let accountData;
+	import { writable } from 'svelte/store';
+	let accountData = [];
 
 	onMount(async function () {
 		let calling = await fetch(
@@ -18,26 +18,36 @@
 	// 	// console.log(response.json());
 	//     accountData = response.json()["data"]
 	// });
+	let currency = accountData.forEach((account) => {
+		(({ current_price, name, ath_change_percentage, image }) => ({
+			name,
+			ath_change_percentage,
+			image,
+			current_price
+		}))(account);
+	});
+	console.log('Currency', currency);
+	// export let currencyData = writable(currency);
 </script>
-<div class="market-rates">
 
-{#if accountData}
-	{#each accountData as data, i}
-		<p>
-			<span class="market-name">
-				{data.id}: 
-			</span>
-			${data.current_price}
-		</p>
-	{/each}
-{/if}
+<div class="market-rates">
+	{#if accountData}
+		{#each accountData as data, i}
+			<p>
+				<span class="market-name">
+					{data.id}:
+				</span>
+				${data.current_price}
+			</p>
+		{/each}
+	{/if}
 </div>
 
 <style>
-    .market-rates {
-        height: 170px;
-        overflow-y: scroll;
-    }
+	.market-rates {
+		height: 170px;
+		overflow-y: scroll;
+	}
 
 	.market-name {
 		font-weight: 600;
