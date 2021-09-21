@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
+	import { currency } from "../../stores/crypto.js";
 	let accountData = [];
+	$currency = []; 
 
 	onMount(async function () {
 		let calling = await fetch(
@@ -10,6 +11,21 @@
 		let p = await calling.json();
 		console.log(p);
 		accountData = p;
+		p.forEach((account) => {
+			let subset = Object.fromEntries(
+				['current_price', 'name', 'ath_change_percentage', 'image']
+					.filter((key) => key in account)
+					.map((key) => [key, account[key]])
+			);
+			$currency.push(subset)
+			// (({ current_price, name, ath_change_percentage, image }) => ({
+			// 	name,
+			// 	ath_change_percentage,
+			// 	image,
+			// 	current_price
+			// }))(account);
+		});
+		console.log('Currency', currency);
 	});
 	// fetch(
 	// 	'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
@@ -18,15 +34,6 @@
 	// 	// console.log(response.json());
 	//     accountData = response.json()["data"]
 	// });
-	let currency = accountData.forEach((account) => {
-		(({ current_price, name, ath_change_percentage, image }) => ({
-			name,
-			ath_change_percentage,
-			image,
-			current_price
-		}))(account);
-	});
-	console.log('Currency', currency);
 	// export let currencyData = writable(currency);
 </script>
 
