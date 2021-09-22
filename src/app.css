@@ -41,12 +41,14 @@ body.dark {
 }
 
 .dark h1,
-.dark h2 {
+.dark h2, 
+.dark .bold {
 	color: var(--dark-heading-color);
 }
 
 .light h1,
-.light h2 {
+.light h2,
+.light .bold {
 	color: var(--light-heading-color);
 }
 
