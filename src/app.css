@@ -57,6 +57,7 @@ body.dark {
 .dark .search input {
 	background: var(--dark-card-background);
 	background-color: var(--dark-card-background);
+	color: var(--dark-font-color);
 }
 
 .light .card-container,

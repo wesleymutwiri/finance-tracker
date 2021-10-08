@@ -128,7 +128,7 @@
 		/* background: #ffffff; */
 		height: 100vh;
 		top: 0;
-		width: 300px;
+		min-width: 300px;
 		align-items: center;
 	}
 

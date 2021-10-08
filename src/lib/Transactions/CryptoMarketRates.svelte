@@ -48,5 +48,7 @@
 
 	.price {
 		grid-area: price;
+		justify-self: end;
+		margin-right: 2rem;
 	}
 </style>

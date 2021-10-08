@@ -1,3 +1,7 @@
+<script>
+	let profileDetailsOpen = false;
+</script>
+
 <div class="row space-between">
 	<div class="search">
 		<input type="search" name="search" id="search" placeholder="Search" />
@@ -61,7 +65,7 @@
 				y2="10.49"
 			/></svg
 		>
-		<div class="row">
+		<div class="row profile-toggle" on:click={() => (profileDetailsOpen = !profileDetailsOpen)}>
 			<div class="avatar">
 				<img src="https://i.pravatar.cc/300" alt="" />
 			</div>
@@ -81,6 +85,11 @@
 			>
 		</div>
 	</div>
+	{#if profileDetailsOpen}
+		<div class="profile-details">
+			<a href="#">Profile</a>
+		</div>
+	{/if}
 </div>
 
 <style>
