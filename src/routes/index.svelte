@@ -87,7 +87,7 @@
 </script>
 <Navbar />
 
-<div class="row">
+<div class="row spaced">
 	<TinyCard
 		name="Expenses"
 		price="30000"
@@ -173,4 +173,8 @@
 		align-items: center;
 	}
 
+	.spaced {
+		margin: 1rem 0;
+		margin-bottom: 2rem;
+	}
 </style>
