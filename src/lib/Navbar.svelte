@@ -122,6 +122,7 @@
 
 	.avatar {
 		margin: 0 1rem 0 3rem;
+		position: relative;
 	}
 
 	.avatar img {
@@ -139,5 +140,20 @@
 	}
 	.icons svg {
 		margin: 1rem;
+	}
+
+	.profile-toggle {
+		cursor: pointer;
+		position: relative;
+		width: max-content;
+		height: max-content;
+	}
+	.profile-details {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: #fff;
+		width: 30px;
+		height: 100px;
 	}
 </style>

@@ -41,7 +41,7 @@ body.dark {
 }
 
 .dark h1,
-.dark h2, 
+.dark h2,
 .dark .bold {
 	color: var(--dark-heading-color);
 }
@@ -54,6 +54,7 @@ body.dark {
 
 .dark .card-container,
 .dark .sidebar-container,
+.dark .modal-container,
 .dark .search input {
 	background: var(--dark-card-background);
 	background-color: var(--dark-card-background);
@@ -62,6 +63,7 @@ body.dark {
 
 .light .card-container,
 .light .sidebar-container,
+.light .modal-container,
 .light .search input {
 	background-color: var(--light-card-background);
 	background: var(--light-card-background);
