@@ -90,28 +90,28 @@
 <div class="row spaced">
 	<TinyCard
 		name="Expenses"
-		price="30000"
+		price="30,000"
 		percentage="-20%"
 		backgroundfrom="#7000e1"
 		backgroundto="#9d4afb"
 	/>
 	<TinyCard
 		name="Investments"
-		price="10000"
+		price="10,000"
 		percentage="+5%"
 		backgroundfrom="#00b0e8"
 		backgroundto="#3dcaf8"
 	/>
 	<TinyCard
 		name="Savings"
-		price="5000"
+		price="5,000"
 		percentage="-1%"
 		backgroundfrom="#fc8800"
 		backgroundto="#fab12f"
 	/>
 	<TinyCard
 		name="Crypto"
-		price="5000"
+		price="5,000"
 		percentage="-1%"
 		backgroundfrom="#d81159"
 		backgroundto="#ff4d6d"
@@ -149,10 +149,10 @@
 				price="-337.99"
 				date="29 Jun at 10:12"
 			/>
-			<TransactionItem title="Profit from trading crypto" price="1024.45" date="27 Jun at 18:34" />
+			<TransactionItem title="Profit from trading crypto" price="1,024.45" date="27 Jun at 18:34" />
 			<TransactionItem
 				title="Profit from Selling of stocks"
-				price="13000.45"
+				price="13,000.45"
 				date="25 Jun at 09:34"
 			/>
 		</span>

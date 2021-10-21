@@ -68,9 +68,6 @@
 		box-sizing: border-box;
 	}
 
-	.dark {
-		background: var(--dark-background);
-	}
 	@media (min-width: 480px) {
 		footer {
 			padding: 40px 0;
