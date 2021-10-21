@@ -1,5 +1,5 @@
 <script>
-	let tableData = [
+	export let tableData = [
 		{
 			vitae: 'dolorem',
 			lectus: 'ipsum',

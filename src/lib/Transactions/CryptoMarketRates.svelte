@@ -1,5 +1,6 @@
 <script>
 	import { currency } from '../../stores/crypto.js';
+	import { formatNumber } from '../../utils/utils';
 </script>
 
 <div class="market-rates">
@@ -10,7 +11,7 @@
 					{data.name}:
 				</span>
 				<span class="price">
-					${data.current_price}
+					${formatNumber(data.current_price)}
 				</span>
 				<span class="percentage-change" />
 			</div>

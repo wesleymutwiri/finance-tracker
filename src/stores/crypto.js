@@ -13,7 +13,14 @@ fetch(
 		// console.log('LocalCur', localCur);
 		localCur.forEach((account) => {
 			let subset = Object.fromEntries(
-				['current_price', 'name', 'ath_change_percentage', 'image']
+				[
+					'current_price',
+					'name',
+					'ath_change_percentage',
+					'image',
+					'market_cap',
+					'price_change_percentage_24h'
+				]
 					.filter((key) => key in account)
 					.map((key) => [key, account[key]])
 			);
