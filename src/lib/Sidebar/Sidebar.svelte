@@ -96,7 +96,7 @@
 
 			Goals
 		</a>
-		<a href="#" class="iconed-link">
+		<a href="/budget" class="iconed-link">
 			<svg
 				viewBox="0 0 24 24"
 				width="24"
@@ -107,10 +107,11 @@
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				class="css-i6dzq1"
-				><circle cx="12" cy="12" r="10" />
-				<line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg
+				><line x1="12" y1="1" x2="12" y2="23" /><path
+					d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+				/></svg
 			>
-			Information
+			Budget
 		</a>
 		<a href="/calendar" class="iconed-link">
 			<svg

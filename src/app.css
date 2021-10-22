@@ -129,6 +129,9 @@ button {
 	font-size: inherit;
 	font-family: inherit;
 }
+button {
+	cursor: pointer;
+}
 
 button:focus:not(:focus-visible) {
 	outline: none;
