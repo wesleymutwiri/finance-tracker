@@ -1,4 +1,5 @@
 <script>
+	import { formatNumber } from '../../utils/utils';
 	export let title, price, date;
 </script>
 
@@ -8,7 +9,7 @@
 	</div>
 	<div class="transaction-amount">
 		<p class:positive={price > 0}>
-			{price} KSH
+			{formatNumber(parseFloat(price))} KSH
 		</p>
 	</div>
 	<div class="transaction-date">

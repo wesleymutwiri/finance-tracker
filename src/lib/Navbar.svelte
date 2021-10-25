@@ -65,31 +65,33 @@
 				y2="10.49"
 			/></svg
 		>
-		<div class="row profile-toggle" on:click={() => (profileDetailsOpen = !profileDetailsOpen)}>
-			<div class="avatar">
-				<img src="https://i.pravatar.cc/300" alt="" />
+		<div class="profile-toggle" on:click={() => (profileDetailsOpen = !profileDetailsOpen)}>
+			<div class="row">
+				<div class="avatar">
+					<img src="https://i.pravatar.cc/300" alt="" />
+				</div>
+				Wesley Mutwiri
+				<svg
+					viewBox="0 0 24 24"
+					width="24"
+					height="24"
+					stroke="currentColor"
+					stroke-width="2"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="css-i6dzq1"
+				>
+					<polyline points="6 9 12 15 18 9" /></svg
+				>
 			</div>
-			Wesley Mutwiri
-			<svg
-				viewBox="0 0 24 24"
-				width="24"
-				height="24"
-				stroke="currentColor"
-				stroke-width="2"
-				fill="none"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="css-i6dzq1"
-			>
-				<polyline points="6 9 12 15 18 9" /></svg
-			>
+			{#if profileDetailsOpen}
+				<ol class="sub-menu" class:profileDetailsOpen>
+					<a href="#">Profile</a>
+				</ol>
+			{/if}
 		</div>
 	</div>
-	{#if profileDetailsOpen}
-		<div class="profile-details">
-			<a href="#">Profile</a>
-		</div>
-	{/if}
 </div>
 
 <style>
@@ -113,7 +115,7 @@
 	}
 	.search svg {
 		position: absolute;
-		top: 1rem;
+		top: 1.5rem;
 		left: 1rem;
 	}
 	/* .search:not(input:placeholder-shown) ~ svg {
@@ -147,13 +149,29 @@
 		position: relative;
 		width: max-content;
 		height: max-content;
+		display: flex;
+		flex-direction: column;
 	}
-	.profile-details {
+	.sub-menu {
+		visibility: hidden; /* hides sub-menu */
+		opacity: 0;
 		position: absolute;
-		bottom: 0;
+		top: 100%;
 		left: 0;
+		width: 100%;
+		transform: translateY(-2em);
+		z-index: -1;
+		transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+	}
+	.profileDetailsOpen {
+		visibility: visible; /* shows sub-menu */
+		opacity: 1;
+		z-index: 1;
+		transform: translateY(0%);
+		transition-delay: 0s, 0s, 0.3s;
 		background: #fff;
-		width: 30px;
-		height: 100px;
+		margin: 0 auto;
+		display: block;
+		width: calc(100% - 20px);
 	}
 </style>

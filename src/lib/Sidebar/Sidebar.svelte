@@ -8,7 +8,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -48,7 +47,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -67,7 +65,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -81,7 +78,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -101,7 +97,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -118,7 +113,6 @@
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
-				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
 				stroke-linecap="round"
@@ -161,12 +155,24 @@
 		display: flex;
 		align-items: center;
 		margin: 1rem 0;
+		position: relative;
 	}
+
+	/* .iconed-link::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 4px;
+		background: orange;
+	} */
+
 	.iconed-link svg {
 		margin-right: 0.5rem;
 	}
 	.bordered {
-		border: 1px solid currentColor;
+		border: 1px solid inherit;
 		border-radius: 4px;
 	}
 	a:hover .bordered {
@@ -178,5 +184,9 @@
 
 	.problematic:hover svg {
 		fill: #7000e1;
+	}
+
+	.toggle-button {
+		margin-top: auto;
 	}
 </style>
