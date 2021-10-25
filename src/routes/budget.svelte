@@ -2,7 +2,7 @@
 	import Card from '$lib/Card/Card.svelte';
 
 	import Modal from '$lib/Utilities/Modal.svelte';
-	import Chart from 'chart.js/auto';
+	import Chart from 'chart.js/auto/auto.js';
 	import { onMount } from 'svelte';
 	let showExpenseModal = false;
 	let showCategoryModal = false;

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import Chart from 'chart.js/auto';
+	import Chart from 'chart.js/auto/auto.js';
 	import TinyCard from '$lib/Card/TinyCard.svelte';
 	import Card from '$lib/Card/Card.svelte';
 	import TransactionItem from '$lib/Transactions/TransactionItem.svelte';
