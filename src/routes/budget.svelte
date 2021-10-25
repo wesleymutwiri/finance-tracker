@@ -7,6 +7,15 @@
 	let showExpenseModal = false;
 	let showCategoryModal = false;
 	let expenseChart;
+	let selected;
+
+	let categories = [
+		{ id: 1, text: `Groceries` },
+		{ id: 2, text: `Electricity` },
+		{ id: 3, text: `Rent` },
+		{ id: 4, text: `Transport` },
+		{ id: 4, text: `Internet` }
+	];
 	onMount(() => {
 		const data = {
 			labels: ['Rent', 'Food', 'Internet', 'Transport', 'Electricity'],
@@ -64,6 +73,18 @@
 			</div>
 			<div slot="modal-body">
 				<input type="text" placeholder="Expense name" />
+				<select name="category" id="" value={selected} on:change={() => answer}>
+					{#each categories as category}
+						<option value={category}>
+							{category.text}
+						</option>
+					{/each}
+				</select>
+				<input type="number" placeholder="Price" />
+			</div>
+			<div slot="modal-buttons">
+				<button class="secondary-button" on:click={() => (showExpenseModal = false)}>close</button>
+				<button>Submit</button>
 			</div>
 		</Modal>
 	{/if}
@@ -75,6 +96,10 @@
 			</div>
 			<div slot="modal-body">
 				<input type="text" placeholder="Category name" />
+			</div>
+			<div slot="modal-buttons">
+				<button class="secondary-button" on:click={() => (showCategoryModal = false)}>close</button>
+				<button>Submit</button>
 			</div>
 		</Modal>
 	{/if}
@@ -88,7 +113,7 @@
 			</div>
 		</span>
 		<span slot="card-body">
-			<canvas bind:this={expenseChart} width={800} height={400} />
+			<canvas bind:this={expenseChart} width={500} height={300} />
 		</span>
 	</Card>
 </div>

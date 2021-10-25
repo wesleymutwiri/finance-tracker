@@ -2,18 +2,18 @@
 	import Modal from '$lib/Utilities/Modal.svelte';
 	let showModal = false;
 	let goalName, goalDescription, targetPrice;
-	type Goal = {
-		uid: string;
-		created_at: Date;
-		name: string;
-		description: string;
-		is_completed: boolean;
-		priceTarget: number;
-		currentPrice: number;
-		targetDate: Date;
-	};
+	// type Goal = {
+	// 	uid: string;
+	// 	created_at: Date;
+	// 	name: string;
+	// 	description: string;
+	// 	is_completed: boolean;
+	// 	priceTarget: number;
+	// 	currentPrice: number;
+	// 	targetDate: Date;
+	// };
 
-	export let goals: Goal[];
+	// export let goals: Goal[];
 </script>
 
 <h1>My goals</h1>
@@ -31,7 +31,7 @@
 					id=""
 					cols="30"
 					rows="10"
-					placeholder="details about the goal"
+					placeholder="Details about the goal"
 					bind:value={goalDescription}
 				/>
 				<input
@@ -41,8 +41,14 @@
 					placeholder="Price required"
 					bind:value={targetPrice}
 				/>
-				button
 			</form>
+		</div>
+		<div slot="modal-buttons">
+			<button class="secondary-button" on:click={() => (showModal = false)}>close</button>
+			<button>Submit</button>
 		</div>
 	</Modal>
 {/if}
+
+<style>
+</style>
