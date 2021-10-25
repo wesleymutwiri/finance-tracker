@@ -149,10 +149,10 @@
 				price="-337.99"
 				date="29 Jun at 10:12"
 			/>
-			<TransactionItem title="Profit from trading crypto" price="1,024.45" date="27 Jun at 18:34" />
+			<TransactionItem title="Profit from trading crypto" price="1024.45" date="27 Jun at 18:34" />
 			<TransactionItem
 				title="Profit from Selling of stocks"
-				price="13,000.45"
+				price="13000.45"
 				date="25 Jun at 09:34"
 			/>
 		</span>

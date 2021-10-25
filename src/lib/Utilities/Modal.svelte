@@ -44,7 +44,9 @@
 	<div class="modal-body">
 		<slot name="modal-body">some modal</slot>
 	</div>
-	<button autofocus on:click={close}>close modal</button>
+	<div class="modal-buttons">
+		<slot name="modal-buttons">Some buttons here</slot>
+	</div>
 </div>
 
 <style>
@@ -65,7 +67,13 @@
 		max-height: calc(100vh - 4em);
 		overflow: auto;
 		transform: translate(-50%, -50%);
-		padding: 1em;
-		border-radius: 0.2em;
+		padding: 1rem 2rem;
+		border-radius: 1.5rem;
+	}
+
+	.modal-buttons {
+		display: flex;
+		justify-content: end;
+		margin: 1rem 0;
 	}
 </style>
