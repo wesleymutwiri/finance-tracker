@@ -4,7 +4,7 @@
 	--orange-color: #fc8800;
 	--dark-background-color: #26182f;
 	--light-background-color: #f5f3f6;
-	--dark-font-color: #786c83;
+	--dark-font-color: #bdbdbd;
 	--dark-heading-color: #fff;
 	--light-heading-color: #26182f;
 	--dark-card-background: #372841;
@@ -14,6 +14,10 @@
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+}
+
+*:focus {
+	outline: 1px solid #fc8800;
 }
 
 *,
@@ -55,7 +59,9 @@ body.dark {
 .dark .card-container,
 .dark .sidebar-container,
 .dark .modal-container,
-.dark .search input {
+.dark .search input,
+.dark thead,
+.dark a {
 	background: var(--dark-card-background);
 	background-color: var(--dark-card-background);
 	color: var(--dark-font-color);
@@ -64,7 +70,9 @@ body.dark {
 .light .card-container,
 .light .sidebar-container,
 .light .modal-container,
-.light .search input {
+.light .search input,
+.light thead,
+.light a {
 	background-color: var(--light-card-background);
 	background: var(--light-card-background);
 	color: var(--light-font-color);
@@ -91,7 +99,7 @@ p {
 }
 
 a {
-	color: #7b777e;
+	/* color: #7b777e; */
 	text-decoration: none;
 }
 
@@ -132,6 +140,11 @@ option {
 	font-size: inherit;
 	font-family: inherit;
 }
+
+input:invalid {
+	outline: red;
+}
+
 button {
 	cursor: pointer;
 	padding: 0.5rem 2rem;
@@ -204,7 +217,8 @@ select {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
 	outline: 2px solid var(--orange-color);
 }
 
@@ -226,6 +240,24 @@ textarea:focus {
 	color: #fff;
 }
 
-/* @media (prefers-color-scheme: dark) {
-	--background-color: #26182f;
-} */
+table,
+th,
+td {
+	/* border: 1px solid; */
+	border-collapse: collapse;
+	margin: 10px;
+	text-align: left;
+	border: none;
+	white-space: nowrap;
+	/* border-radius: 1rem; */
+}
+
+th {
+	font-size: 1.2rem;
+	text-transform: capitalize;
+	padding: 0.8rem 1rem;
+}
+
+td {
+	padding: 0.8rem 1rem;
+}

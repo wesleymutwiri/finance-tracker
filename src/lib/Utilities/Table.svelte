@@ -33,11 +33,4 @@
 </table>
 
 <style>
-	table,
-	th,
-	td {
-		border: 1px solid;
-		border-collapse: collapse;
-		margin: 10px;
-	}
 </style>

@@ -25,7 +25,15 @@
 		</div>
 		<div slot="modal-body">
 			<form action="">
-				<input type="text" name="goalName" id="" placeholder="Name of Goal" bind:value={goalName} />
+				<input type="text" name="goalName" id="" placeholder="Name of Goal" bind:value={goalName}/>
+				<input
+					type="number"
+					name="price"
+					id=""
+					placeholder="Price required"
+					bind:value={targetPrice}
+				/>
+				<input type="date" name="target-date" id="" />
 				<textarea
 					name="goalDescription"
 					id=""
@@ -33,13 +41,6 @@
 					rows="10"
 					placeholder="Details about the goal"
 					bind:value={goalDescription}
-				/>
-				<input
-					type="number"
-					name="price"
-					id=""
-					placeholder="Price required"
-					bind:value={targetPrice}
 				/>
 			</form>
 		</div>

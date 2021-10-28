@@ -4,7 +4,6 @@
 	import { formatNumber } from '../utils/utils';
 	// $: console.log(currency);
 	// $: console.log($currency)
-
 </script>
 
 <h1>Current crypto markets</h1>
@@ -36,12 +35,15 @@
 			{#each $currency as data, i}
 				<tr>
 					<td>{i + 1}</td>
-					<td class="data-row"><img class="small-image" src={data.image} alt={data.name} /> {data.name}</td>
+					<td class="data-row"
+						><img class="small-image" src={data.image} alt={data.name} /> {data.name}</td
+					>
 					<td>{formatNumber(data.current_price)}</td>
-					<td>{data.ath_change_percentage}</td>
-					<td>{data.price_change_percentage_24h}</td>
+					<td class:positive={data.ath_change_percentage > 0}>{data.ath_change_percentage}</td>
+					<td class="percentage" class:positive={data.price_change_percentage_24h > 0}
+						>{data.price_change_percentage_24h}</td
+					>
 					<td>{formatNumber(data.market_cap)}</td>
-
 				</tr>
 			{/each}
 		</tbody>
@@ -74,7 +76,15 @@
 		font-size: 1.1rem;
 		cursor: pointer;
 	}
-	td {
-		padding: 1rem 0;
+
+	.percentage {
+		color: #fc8800;
 	}
+
+	.positive {
+		color: #00b0e8;
+	}
+	/* td {
+		padding: 1rem 0;
+	} */
 </style>

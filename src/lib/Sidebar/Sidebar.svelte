@@ -42,7 +42,7 @@
 			>
 			Dashboard
 		</a>
-		<a href="#" class="iconed-link">
+		<a href="/transactions" class="iconed-link">
 			<svg
 				viewBox="0 0 24 24"
 				width="24"
@@ -58,7 +58,7 @@
 					points="10 9 9 9 8 9"
 				/></svg
 			>
-			Documents
+			Transactions
 		</a>
 		<a href="/statistics" class="iconed-link">
 			<svg
