@@ -6,9 +6,10 @@
 	import { onMount } from 'svelte';
 	let showExpenseModal = false;
 	let showCategoryModal = false;
+	let placeholder = 'Select Category';
 	let expenseChart;
 	let selected;
-
+	let categoryBudget;
 	let categories = [
 		{ id: 1, text: `Groceries` },
 		{ id: 2, text: `Electricity` },
@@ -73,7 +74,10 @@
 			</div>
 			<div slot="modal-body">
 				<input type="text" placeholder="Expense name" />
-				<select name="category" id="" value={selected} on:change={() => answer}>
+				<select name="category" id="" bind:value={selected}>
+					{#if placeholder}
+						<option hidden value="" disabled selected>{placeholder}</option>
+					{/if}
 					{#each categories as category}
 						<option value={category}>
 							{category.text}
@@ -81,6 +85,7 @@
 					{/each}
 				</select>
 				<input type="number" placeholder="Price" />
+				<input type="date" name="goal-target" id="">
 			</div>
 			<div slot="modal-buttons">
 				<button class="secondary-button" on:click={() => (showExpenseModal = false)}>close</button>
