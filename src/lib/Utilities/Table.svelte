@@ -19,6 +19,9 @@
 			{#each Object.keys(tableData[0]) as columnHeading}
 				<th>{columnHeading}</th>
 			{/each}
+			{#if $$slots.progress}
+				<th>Progress</th>
+			{/if}
 		</tr>
 	</thead>
 	<tbody>
@@ -27,6 +30,9 @@
 				{#each Object.values(row) as cell}
 					<td>{cell}</td>
 				{/each}
+				<td>
+					<slot name="progress" />
+				</td>
 			</tr>
 		{/each}
 	</tbody>

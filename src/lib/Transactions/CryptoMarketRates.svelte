@@ -21,7 +21,7 @@
 
 <style>
 	.market-rates {
-		height: 200px;
+		height: 170px;
 		overflow-y: scroll;
 		width: 400px;
 	}

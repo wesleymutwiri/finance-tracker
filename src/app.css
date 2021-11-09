@@ -61,7 +61,8 @@ body.dark {
 .dark .modal-container,
 .dark .search input,
 .dark thead,
-.dark a {
+.dark a,
+.dark .progress {
 	background: var(--dark-card-background);
 	background-color: var(--dark-card-background);
 	color: var(--dark-font-color);
@@ -72,7 +73,8 @@ body.dark {
 .light .modal-container,
 .light .search input,
 .light thead,
-.light a {
+.light a,
+.light .progress {
 	background-color: var(--light-card-background);
 	background: var(--light-card-background);
 	color: var(--light-font-color);
@@ -238,6 +240,10 @@ select:focus {
 
 .dark .secondary-button {
 	color: #fff;
+}
+
+table {
+	width: 100%;
 }
 
 table,
