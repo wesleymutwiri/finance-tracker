@@ -2,8 +2,10 @@
 	import Card from '$lib/Card/Card.svelte';
 
 	import Modal from '$lib/Utilities/Modal.svelte';
+	import Table from '$lib/Utilities/Table.svelte';
 	import Chart from 'chart.js/auto/auto.js';
 	import { onMount } from 'svelte';
+	import { space } from 'svelte/internal';
 	let showExpenseModal = false;
 	let showCategoryModal = false;
 	let placeholder = 'Select Category';
@@ -85,7 +87,7 @@
 					{/each}
 				</select>
 				<input type="number" placeholder="Price" />
-				<input type="date" name="goal-target" id="">
+				<input type="date" name="goal-target" id="" />
 			</div>
 			<div slot="modal-buttons">
 				<button class="secondary-button" on:click={() => (showExpenseModal = false)}>close</button>
@@ -121,4 +123,21 @@
 			<canvas bind:this={expenseChart} width={500} height={300} />
 		</span>
 	</Card>
+	<div class="table-content">
+		<Table />
+		<Table tableData={categories} />
+	</div>
 </div>
+
+<style>
+	.row {
+		display: flex;
+		width: 100%;
+	}
+	.table-content {
+		width: 100%;
+	}
+	/* .table-content table{
+		margin: 2rem 0;
+	} */
+</style>

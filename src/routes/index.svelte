@@ -177,4 +177,10 @@
 		margin: 1rem 0;
 		margin-bottom: 2rem;
 	}
+
+	@media screen and (max-width: 1400px) {
+		.row {
+			flex-wrap: wrap;
+		}
+	}
 </style>

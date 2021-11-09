@@ -189,4 +189,19 @@
 	.toggle-button {
 		margin-top: auto;
 	}
+
+	@media screen and (max-width: 1200px) {
+		.sidebar-container {
+			min-width: 100px;
+		}
+
+		.iconed-link svg {
+			display: block;
+		}
+		.logo,
+		.iconed-link,
+		.toggle-button {
+			display: none;
+		}
+	}
 </style>

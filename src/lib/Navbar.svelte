@@ -169,9 +169,9 @@
 		z-index: 1;
 		transform: translateY(0%);
 		transition-delay: 0s, 0s, 0.3s;
-		background: #fff;
+		/* background: #fff; */
 		margin: 0 auto;
 		display: block;
-		width: calc(100% - 20px);
+		/* width: calc(100% - 20px); */
 	}
 </style>

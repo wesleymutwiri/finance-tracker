@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Modal from '$lib/Utilities/Modal.svelte';
+	import ProgressBar from '$lib/Utilities/ProgressBar.svelte';
+	import Table from '$lib/Utilities/Table.svelte';
+
 	let showModal = false;
 	let goalName, goalDescription, targetPrice;
 	// type Goal = {
@@ -25,7 +28,7 @@
 		</div>
 		<div slot="modal-body">
 			<form action="">
-				<input type="text" name="goalName" id="" placeholder="Name of Goal" bind:value={goalName}/>
+				<input type="text" name="goalName" id="" placeholder="Name of Goal" bind:value={goalName} />
 				<input
 					type="number"
 					name="price"
@@ -50,6 +53,12 @@
 		</div>
 	</Modal>
 {/if}
+
+<Table>
+	<div slot="progress" class="progress">
+		<ProgressBar />
+	</div>
+</Table>
 
 <style>
 </style>
