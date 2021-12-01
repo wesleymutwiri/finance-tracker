@@ -240,6 +240,10 @@ select:focus {
 	color: #fff;
 }
 
+table {
+	width: 100%;
+}
+
 table,
 th,
 td {

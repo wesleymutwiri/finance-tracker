@@ -16,6 +16,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>#</th>
 			{#each Object.keys(tableData[0]) as columnHeading}
 				<th>{columnHeading}</th>
 			{/each}
@@ -24,6 +25,7 @@
 	<tbody>
 		{#each Object.values(tableData) as row}
 			<tr>
+				<td />
 				{#each Object.values(row) as cell}
 					<td>{cell}</td>
 				{/each}
@@ -33,4 +35,21 @@
 </table>
 
 <style>
+	table {
+		counter-reset: some-rows -1;
+	}
+
+	table tr {
+		counter-increment: some-rows 1;
+	}
+
+	table tr td:first-child::before {
+		content: counter(some-rows);
+	}
+
+	td {
+		max-width: 150px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 </style>
