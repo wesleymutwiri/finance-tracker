@@ -88,7 +88,17 @@
 <CalendarWeekdays />
 
 <!-- calendar grid  -->
-<ol class="days-grid">
+<ol
+	class="days-grid"
+	transition:fly={{
+		delay: 250,
+		duration: 300,
+		x: 500,
+		y: 0,
+		opacity: 0.5,
+		easing: quintOut
+	}}
+>
 	{#each days as day (day.date)}
 		<li>
 			<CalendarMonthDayItem
@@ -101,32 +111,10 @@
 </ol>
 
 <style>
-	.time {
-		color: #fff;
-		display: flex;
-		flex-direction: column;
-		font-size: 0.64rem;
-		padding: 0.5rem 1rem;
-		text-align: center;
-		position: relative;
-		cursor: pointer;
-	}
-
-	.calendar-month {
-		position: absolute;
-		top: -320px;
-		background: rgba(36, 36, 36, 0.8);
-		height: 300px;
-		width: 300px;
-		right: 20px;
-		border-radius: 0.4rem;
-		padding: 1rem;
-	}
-
 	.days-grid {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
-		gap: 1rem 0.5rem;
+		/* gap: 1rem 0.5rem; */
 		width: 100%;
 		align-items: center;
 		margin: 1rem 0;
@@ -134,5 +122,7 @@
 	li {
 		list-style: none;
 		/* padding: .1rem; */
+		padding: 3rem 1rem;
+		border: 1px solid #fff;
 	}
 </style>

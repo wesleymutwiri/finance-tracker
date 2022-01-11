@@ -31,6 +31,9 @@
   } */
   .calendar-day--today {
     background: #ffbd2a;
+    text-align: center;
+    border-radius: 50%;
+    width: 1.4rem;
   }
   .calendar-day--today:hover {
     background: #f5a700;
